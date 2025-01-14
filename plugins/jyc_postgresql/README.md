@@ -22,3 +22,11 @@ devbox services up -b
 # inside you will find the name of the database you want to create
 devbox db:init
 ```
+
+---
+
+## speed run
+
+```
+wget https://raw.githubusercontent.com/jycouet/devbox/refs/heads/main/plugins/jyc_postgresql/devbox.json
+```
