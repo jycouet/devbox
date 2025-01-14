@@ -4,7 +4,7 @@
   "shell": {
     "init_hook": [
       "test -f .devbox/virtenv/postgresql/data/PG_VERSION && test -d .devbox/virtenv/postgresql/data/base || initdb",
-      "chmod +x .devbox/virtenv/jyc_postgresql/db-init.sh"
+      "chmod 777 .devbox/virtenv/jyc_postgresql/db-init.sh"
     ],
     "scripts": {
       "db:init": ["sh tools/devbox/db-init.sh"]
