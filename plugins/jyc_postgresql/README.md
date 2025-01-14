@@ -1,0 +1,24 @@
+# jyc_postgresql
+
+1. Add in your `devbox.json`
+
+```json
+{
+  //...
+  "include": ["github:jycouet/devbox?dir=plugins/jyc_postgresql"]
+}
+```
+
+2. start postgresql
+
+```sh
+devbox services up -b
+```
+
+3. create your database
+
+```sh
+# This will run the `tools/devbox/db-init.sh` script
+# inside you will find the name of the database you want to create
+devbox db:init
+```
