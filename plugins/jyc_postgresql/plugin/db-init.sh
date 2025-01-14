@@ -65,11 +65,14 @@ if ! psql -d $DB_NAME -c "SELECT 1 FROM pg_roles WHERE rolname='$DB_USER'" | gre
 EOSQL
     echo "[Postgres] Done"
 
+    # Use PGPORT if set, otherwise default to 5432
+    PORT="${PGPORT:-5432}"
+
     # After all operations are done, show the DATABASE_URL
     echo ""
     echo "✨ Add this to your .env file:"
-    echo "DATABASE_URL='postgres://$DB_USER:$DB_PASSWORD@127.0.0.1:5433/$DB_NAME'"
+    echo "DATABASE_URL='postgres://$DB_USER:$DB_PASSWORD@127.0.0.1:$PORT/$DB_NAME'"
     echo ""
-    echo "DATABASE_URL='postgres://$DB_USER:$DB_PASSWORD@127.0.0.1:5433/$DB_NAME'" > .env
+    echo "DATABASE_URL='postgres://$DB_USER:$DB_PASSWORD@127.0.0.1:$PORT/$DB_NAME'" > .env
 fi
 
