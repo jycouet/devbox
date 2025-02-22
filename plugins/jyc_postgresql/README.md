@@ -9,7 +9,7 @@
 }
 ```
 
-2. starting postgresql in the background
+2. start postgresql in the background
 
 ```sh
 devbox services up -b
@@ -18,8 +18,7 @@ devbox services up -b
 3. create your database
 
 ```sh
-# This will run the `tools/devbox/db-init.sh` script
-# inside you will find the name of the database you want to create
+# create an empty database. (to tune name, login, ... check `tools/devbox/db-init.sh`)
 devbox run db:init
 ```
 
