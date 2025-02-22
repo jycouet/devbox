@@ -9,7 +9,7 @@
 }
 ```
 
-2. start postgresql
+2. starting postgresql in the background
 
 ```sh
 devbox services up -b
