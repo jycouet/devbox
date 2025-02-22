@@ -20,7 +20,7 @@ devbox services up -b
 ```sh
 # This will run the `tools/devbox/db-init.sh` script
 # inside you will find the name of the database you want to create
-devbox db:init
+devbox run db:init
 ```
 
 ---
