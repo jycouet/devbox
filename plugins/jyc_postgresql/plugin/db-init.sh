@@ -70,9 +70,8 @@ EOSQL
 
     # After all operations are done, show the DATABASE_URL
     echo ""
-    echo "✨ Add this to your .env file:"
+    echo "✨ Here is your connexion string, you can now add this to your .env file."
     echo "DATABASE_URL='postgres://$DB_USER:$DB_PASSWORD@127.0.0.1:$PORT/$DB_NAME'"
     echo ""
-    echo "DATABASE_URL='postgres://$DB_USER:$DB_PASSWORD@127.0.0.1:$PORT/$DB_NAME'" > .env
 fi
 
