@@ -6,7 +6,12 @@
   "shell": {
     "init_hook": [
       "test -f .devbox/virtenv/postgresql/data/PG_VERSION && test -d .devbox/virtenv/postgresql/data/base || initdb",
-      "chmod 777 .devbox/virtenv/jycouet.devbox.jyc_postgresql/db-init.sh"
+      "chmod 777 .devbox/virtenv/jycouet.devbox.jyc_postgresql/db-init.sh",
+      "echo '💡 usefull cmd with jyc_postgresql:'",
+      "echo '    # start postgresql in the background'",
+      "echo '    devbox services up -b'",
+      "echo '    # create an empty database. (to tune name, login, ... check `tools/devbox/db-init.sh`)'",
+      "echo '    devbox run db:init'"
     ],
     "scripts": {
       "db:init": ["sh tools/devbox/db-init.sh"]
