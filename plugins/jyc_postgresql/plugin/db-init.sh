@@ -40,14 +40,18 @@ fi
 
 # DB does not exist
 if ! psql -lqt | cut -d \| -f 1 | grep -qw $DB_NAME; then
-    echo "[Postgres] Creating database..."
+    echo "[Postgres] database creating..."
     createdb $DB_NAME
-    echo "[Postgres] Done"
+    echo "[Postgres] database created"
 fi
+
+echo "[Postgres] database timezone to UTC enforcing..."
+psql -d $DB_NAME -c "ALTER DATABASE $DB_NAME SET timezone TO 'UTC';"
+echo "[Postgres] database timezone to UTC enforced"
 
 # User does not exist
 if ! psql -d $DB_NAME -c "SELECT 1 FROM pg_roles WHERE rolname='$DB_USER'" | grep -q 1; then
-    echo "[Postgres] Setting permissions..."
+    echo "[Postgres] Permissions tuning..."
     psql -d $DB_NAME -v ON_ERROR_STOP=1 << EOSQL
     DO \$\$
     BEGIN
@@ -63,15 +67,19 @@ if ! psql -d $DB_NAME -c "SELECT 1 FROM pg_roles WHERE rolname='$DB_USER'" | gre
     ALTER DEFAULT PRIVILEGES GRANT ALL ON TABLES TO $DB_USER;
     ALTER DEFAULT PRIVILEGES GRANT ALL ON SCHEMAS TO $DB_USER;
 EOSQL
-    echo "[Postgres] Done"
-
+  then
+    echo "[Postgres] Permissions tuned"
+    
     # Use PGPORT if set, otherwise default to 5432
     PORT="${PGPORT:-5432}"
-
-    # After all operations are done, show the DATABASE_URL
+    
     echo ""
-    echo "✨ Here is your connexion string, you can now add this to your .env file."
+    echo "✨ Here is your connection string, you can now add this to your .env file."
     echo "DATABASE_URL='postgres://$DB_USER:$DB_PASSWORD@127.0.0.1:$PORT/$DB_NAME'"
     echo ""
+  else
+    echo "[Postgres] error"
+    exit 1
+  fi
 fi
 
