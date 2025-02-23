@@ -1,24 +1,31 @@
 {
   "name": "jyc_postgresql",
+  "description": "postgresql plugin with some useful scripts",
   "$schema": "https://raw.githubusercontent.com/jetify-com/devbox/0.13.7/.schema/devbox-plugin.schema.json",
-  "version": "0.5",
+  "version": "0.7",
   "packages": ["postgresql@latest"],
   "shell": {
     "init_hook": [
       "test -f .devbox/virtenv/postgresql/data/PG_VERSION && test -d .devbox/virtenv/postgresql/data/base || initdb",
-      "chmod 777 .devbox/virtenv/jycouet.devbox.jyc_postgresql/db-init.sh",
+      "chmod 777 {{ .Virtenv }}/helpers.sh",
+      "chmod 777 {{ .Virtenv }}/db-init.sh",
+      "echo ''",
       "echo '💡 usefull cmd with jyc_postgresql:'",
-      "echo '    # start postgresql in the background'",
-      "echo '    devbox services up -b'",
-      "echo '    # create an empty database. (to tune name, login, ... check `tools/devbox/db-init.sh`)'",
-      "echo '    devbox run db:init'"
+      "echo ''",
+      "echo '   # start postgresql in the background'",
+      "echo '   devbox services up -b'",
+      "echo ''",
+      "echo '   # create an empty database. (to tune name, login, ... check `./devbox.d/jyc_postgresql/db-init.sh`)'",
+      "echo '   devbox run db-init'",
+      "echo ''"
     ],
     "scripts": {
-      "db:init": ["sh tools/devbox/db-init.sh"]
+      "db-init": ["sh {{ .DevboxDir }}/db-init.sh"]
     }
   },
   "create_files": {
     "{{ .Virtenv }}/db-init.sh": "./plugin/db-init.sh",
-    "tools/devbox/db-init.sh": "./user/db-init.sh"
+    "{{ .Virtenv }}/helpers.sh": "./plugin/helpers.sh",
+    "{{.DevboxDir}}/db-init.sh": "./user/db-init.sh"
   }
 }

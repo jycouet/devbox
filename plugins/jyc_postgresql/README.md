@@ -19,7 +19,7 @@ devbox services up -b
 
 ```sh
 # create an empty database. (to tune name, login, ... check `tools/devbox/db-init.sh`)
-devbox run db:init
+devbox run db-init
 ```
 
 ---
