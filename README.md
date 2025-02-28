@@ -29,4 +29,8 @@ devbox search pnpm
 
 # create a devbox shell with a specific node version
 alias env-node="mkdir .devbox-tmp && cd .devbox-tmp && devbox init && devbox add nodejs@22.12.0 && cd - && devbox shell --config .devbox-tmp && rm -fr .devbox-tmp"
+
+# utils
+devbox init && devbox add nodejs@22 && devbox shell
+devbox init && devbox add nodejs@22 && devbox add pnpm@9 && devbox shell
 ```
