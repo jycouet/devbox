@@ -2,7 +2,7 @@
   "name": "jyc_postgresql",
   "description": "postgresql plugin with some useful scripts",
   "$schema": "https://raw.githubusercontent.com/jetify-com/devbox/0.15.0/.schema/devbox-plugin.schema.json",
-  "version": "0.9",
+  "version": "0.10",
   "packages": ["postgresql@latest"],
   "shell": {
     "init_hook": [
@@ -32,6 +32,7 @@
     "{{ .Virtenv }}/db-init.sh": "./plugin/db-init.sh",
     "{{ .Virtenv }}/helpers.sh": "./plugin/helpers.sh",
     "{{.DevboxDir}}/db-drop.sh": "./user/db-drop.sh",
-    "{{.DevboxDir}}/db-init.sh": "./user/db-init.sh"
+    "{{.DevboxDir}}/db-init.sh": "./user/db-init.sh",
+    "{{.DevboxDir}}/db-restore.sh": "./user/db-restore.sh"
   }
 }
