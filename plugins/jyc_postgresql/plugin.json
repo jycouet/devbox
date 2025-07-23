@@ -14,7 +14,7 @@
       "echo '    # start postgresql in the background'",
       "echo '    devbox services up -b'",
       "echo ''",
-      "echo '    # create an empty database, drop, restore. # check './devbox.d/jyc_postgresql/db-init.sh' for options'",
+      "echo '    # create an empty database, drop, restore. Options in ./devbox.d/jyc_postgresql/db-init.sh'",
       "echo '    devbox run db-init'",
       "echo '    devbox run db-drop'",
       "echo '    devbox run db-restore'",
