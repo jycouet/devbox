@@ -68,14 +68,13 @@ EOSQL
         
         # Use PGPORT if set, otherwise default to 5432
         PORT="${PGPORT:-5432}"
-        
-        echo ""
-        echo "✨ Here is your connection string, you can now add this to your .env file."
-        echo "DATABASE_URL='postgres://$DB_USER:$DB_PASSWORD@127.0.0.1:$PORT/$DB_NAME'"
-        echo ""
     else
         echo "❌ Permissions tuning - error"
         exit 1
     fi
 fi
 
+echo ""
+echo "✨ Here is your connection string, you can now add this to your .env file."
+echo "DATABASE_URL='postgres://$DB_USER:$DB_PASSWORD@127.0.0.1:$PORT/$DB_NAME'"
+echo ""
