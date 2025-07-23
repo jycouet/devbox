@@ -2,7 +2,7 @@
   "name": "jyc_postgresql",
   "description": "postgresql plugin with some useful scripts",
   "$schema": "https://raw.githubusercontent.com/jetify-com/devbox/0.15.0/.schema/devbox-plugin.schema.json",
-  "version": "0.10",
+  "version": "0.11",
   "packages": ["postgresql@latest"],
   "shell": {
     "init_hook": [
