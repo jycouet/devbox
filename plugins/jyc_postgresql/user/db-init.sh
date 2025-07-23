@@ -6,7 +6,7 @@ source "$jyc_postgresql_dir/helpers.sh"
 
 ## ---Your custom things---
 
-DB_NAME="demo_db"
+# DB_NAME="demo_db" # or in your devbox.json "env": { "DB_NAME": "main_db" }
 
 # run the db-init script to create a database
 "$jyc_postgresql_dir/db-init.sh" -n $DB_NAME
