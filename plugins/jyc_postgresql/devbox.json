@@ -2,6 +2,9 @@
   "$schema": "https://raw.githubusercontent.com/jetify-com/devbox/0.15.0/.schema/devbox.schema.json",
   "packages": ["nodejs@22.12.0", "pnpm@10.13.1"],
   "include": ["github:jycouet/devbox?dir=plugins/jyc_postgresql"],
+  "env": {
+    "DB_NAME": "main_db"
+  },
   "shell": {
     "init_hook": ["echo '🚀 You are all set, well done! 🎉'"],
     "scripts": {
