@@ -16,8 +16,8 @@
       "echo ''",
       "echo '   # create an empty database. (to tune name, login, ... check `./devbox.d/jyc_postgresql/db-init.sh`)'",
       "echo '   devbox run db-init'",
-      "echo '   devbox run db-drop' # to drop the db",
-      "echo '   devbox run db-restore' # to restore ../backup/db.$DB_NAME.dmp",
+      "echo '   devbox run db-drop # to drop the db'",
+      "echo '   devbox run db-restore # to restore ../backup/db.$DB_NAME.dmp'",
       "echo ''"
     ],
     "scripts": {
