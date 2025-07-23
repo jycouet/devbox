@@ -9,8 +9,6 @@
       "test -f .devbox/virtenv/postgresql/data/PG_VERSION && test -d .devbox/virtenv/postgresql/data/base || initdb",
       "chmod 777 {{ .Virtenv }}/helpers.sh",
       "chmod 777 {{ .Virtenv }}/db-init.sh",
-      "chmod 777 {{ .Virtenv }}/db-drop.sh",
-      "chmod 777 {{ .Virtenv }}/db-restore.sh",
       "echo '💡 usefull cmd with jyc_postgresql:'",
       "echo ''",
       "echo '   # start postgresql in the background'",
