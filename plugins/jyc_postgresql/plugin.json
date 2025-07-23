@@ -19,12 +19,14 @@
       "echo ''"
     ],
     "scripts": {
+      "db-drop": ["sh {{ .DevboxDir }}/db-drop.sh"],
       "db-init": ["sh {{ .DevboxDir }}/db-init.sh"]
     }
   },
   "create_files": {
     "{{ .Virtenv }}/db-init.sh": "./plugin/db-init.sh",
     "{{ .Virtenv }}/helpers.sh": "./plugin/helpers.sh",
+    "{{.DevboxDir}}/db-drop.sh": "./user/db-drop.sh",
     "{{.DevboxDir}}/db-init.sh": "./user/db-init.sh"
   }
 }
