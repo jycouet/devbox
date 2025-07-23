@@ -2,7 +2,7 @@
   "name": "jyc_postgresql",
   "description": "postgresql plugin with some useful scripts",
   "$schema": "https://raw.githubusercontent.com/jetify-com/devbox/0.15.0/.schema/devbox-plugin.schema.json",
-  "version": "0.13",
+  "version": "0.14",
   "packages": ["postgresql@latest"],
   "shell": {
     "init_hook": [
@@ -11,13 +11,13 @@
       "chmod 777 {{ .Virtenv }}/db-init.sh",
       "echo '💡 usefull cmd with jyc_postgresql:'",
       "echo ''",
-      "echo '   # start postgresql in the background.'",
-      "echo '   devbox services up -b'",
+      "echo '    # start postgresql in the background'",
+      "echo '    devbox services up -b'",
       "echo ''",
-      "echo '   # create an empty database. (to tune name, login, ... check `./devbox.d/jyc_postgresql/db-init.sh`)'",
-      "echo '   devbox run db-init'",
-      "echo '   devbox run db-drop # to drop the db'",
-      "echo '   devbox run db-restore # to restore ../backup/db.$DB_NAME.dmp'",
+      "echo '    # create an empty database, drop, restore. (check './devbox.d/jyc_postgresql/db-init.sh' for more config)'",
+      "echo '    devbox run db-init'",
+      "echo '    devbox run db-drop'",
+      "echo '    devbox run db-restore'",
       "echo ''"
     ],
     "scripts": {
