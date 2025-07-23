@@ -11,7 +11,7 @@
       "chmod 777 {{ .Virtenv }}/db-init.sh",
       "echo '💡 usefull cmd with jyc_postgresql:'",
       "echo ''",
-      "echo '   # start postgresql in the background'",
+      "echo '   # start postgresql in the background.'",
       "echo '   devbox services up -b'",
       "echo ''",
       "echo '   # create an empty database. (to tune name, login, ... check `./devbox.d/jyc_postgresql/db-init.sh`)'",
