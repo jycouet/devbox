@@ -66,8 +66,7 @@ EOSQL
     then
         echo "✅ Permissions tuning - done"
         
-        # Use PGPORT if set, otherwise default to 5432
-        PORT="${PGPORT:-5432}"
+        PORT="$PGPORT"
     else
         echo "❌ Permissions tuning - error"
         exit 1

@@ -10,4 +10,4 @@ source "$jyc_postgresql_dir/helpers.sh"
 
 BACKUP_FILE="../backup/db.$DB_NAME.dmp"
 
-execute_and_log "Database restore" "pg_restore -U postgres -d \"$DB_NAME\" \"$BACKUP_FILE\""
+execute_and_log "Database restore" "pg_restore -d \"$DB_NAME\" \"$BACKUP_FILE\""
