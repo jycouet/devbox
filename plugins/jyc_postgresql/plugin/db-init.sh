@@ -65,8 +65,6 @@ if ! psql -d $DB_NAME -c "SELECT 1 FROM pg_roles WHERE rolname='$DB_USER'" | gre
 EOSQL
     then
         echo "✅ Permissions tuning - done"
-        
-        PORT="$PGPORT"
     else
         echo "❌ Permissions tuning - error"
         exit 1
@@ -75,5 +73,5 @@ fi
 
 echo ""
 echo "✨ Here is your connection string, you can now add this to your .env file."
-echo "DATABASE_URL='postgres://$DB_USER:$DB_PASSWORD@127.0.0.1:$PORT/$DB_NAME'"
+echo "DATABASE_URL='postgres://$DB_USER:$DB_PASSWORD@$PGHOST:$PGPORT/$DB_NAME'"
 echo ""
