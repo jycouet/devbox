@@ -11,7 +11,7 @@
       "chmod 777 {{ .Virtenv }}/db-init.sh",
       "echo '💡 usefull cmd with jyc_postgresql:'",
       "echo ''",
-      "echo '    #env (PGPORT=${PGPORT:-5432}, PGUSER=${PGUSER:-postgres}, DB_NAME=${DB_NAME:-main_db})'",
+      "echo \"    #env (PGPORT=${PGPORT:-5432}, PGUSER=${PGUSER:-postgres}, DB_NAME=${DB_NAME:-main_db})\"",
       "echo ''",
       "echo '    # start postgresql in the background'",
       "echo '    devbox services up -b'",
