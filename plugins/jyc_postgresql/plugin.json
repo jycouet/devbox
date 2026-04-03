@@ -2,7 +2,7 @@
   "name": "jyc_postgresql",
   "description": "postgresql plugin with some useful scripts",
   "$schema": "https://raw.githubusercontent.com/jetify-com/devbox/0.15.0/.schema/devbox-plugin.schema.json",
-  "version": "0.19",
+  "version": "0.20",
   "packages": ["postgresql@latest"],
   "shell": {
     "init_hook": [
@@ -10,6 +10,8 @@
       "chmod 777 {{ .Virtenv }}/helpers.sh",
       "chmod 777 {{ .Virtenv }}/db-init.sh",
       "echo '💡 usefull cmd with jyc_postgresql:'",
+      "echo ''",
+      "echo '    #env (PGPORT=${PGPORT:-5432}, PGUSER=${PGUSER:-postgres}, DB_NAME=${DB_NAME:-main_db})'",
       "echo ''",
       "echo '    # start postgresql in the background'",
       "echo '    devbox services up -b'",
